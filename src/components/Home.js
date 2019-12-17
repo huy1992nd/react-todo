@@ -1,7 +1,22 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 
 class Home extends Component {
+	constructor(...props) {
+    super(...props);
+	}
+
+	createTasks = item => {
+    return (
+		<li key={item.id} >
+			 <span className={item.update ? 'updateStyle todo-item' : 'noneUpdateStyle todo-item'}>
+				 {item.text}
+			 </span>
+		</li>)
+  }
+
 	render() {
+		const listItems = this.props.todos.map(this.createTasks);
 		return (
 			<Fragment>
 				<div className="container">
@@ -44,11 +59,11 @@ class Home extends Component {
 							<h3>Welcome to Demo react</h3>
 							<p>
 								Welcome To demo react
-								This is an app to add todo list
-                </p>
-							<p>
-								Thanks
-                </p>
+                This is an app to add todo list
+              </p>
+							<div>
+							   <ul id="filters" className="list-unstyled">{listItems}</ul>
+              </div>
 						</div>
 					</div>
 				</div>
@@ -57,4 +72,14 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+const getTodos = (todos, search_str) => {
+	  return todos.filter(t => t.text.includes(search_str));
+}
+
+const mapStateToProps = state => ({
+	todos: getTodos(state.todos, state.search_str)
+})
+
+export default connect(
+  mapStateToProps
+)(Home)

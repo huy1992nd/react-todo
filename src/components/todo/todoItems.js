@@ -4,12 +4,12 @@ import { removeTodo, updateTodo } from '../../actions/index';
 
 class todoItems extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(...props) {
+    super(...props);
   }
 
   createTasks = item => {
-    return (<li key={item.id} onClick={() => this.handerRemove(item.id)}> <span className="todo-item">{item.text}</span></li>)
+    return (<li key={item.id} onClick={() => this.handerRemove(item.id)}> <span className={item.update ? 'updateStyle todo-item' : 'noneUpdateStyle todo-item'}>{item.text}</span></li>)
   }
 
   handerRemove = (key) => {

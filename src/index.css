@@ -21,8 +21,15 @@ body {
   margin: 15px -15px;
 }
 
+.updateStyle  {
+  background-color: #f77b6f
+}
+
+.noneUpdateStyle  {
+   background-color: #E2E0E1;
+}
+
 ul#filters li .todo-item {
-  background: #E2E0E1;
   padding: 10px 15px;
   display: inline-block;
   color: #7D797A;
