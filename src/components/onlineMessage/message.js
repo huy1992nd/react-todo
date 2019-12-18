@@ -9,8 +9,6 @@ class Message extends Component {
             list_message: [],
             group: null
         }
-        // socket.emit('list_message',{});
-        
         // this.addItems = this.addItems.bind(this);
     }
 
@@ -20,13 +18,18 @@ class Message extends Component {
             this.setState({ list_message: data })
         });
     }
+
+    getMessage = (e) => {
+        e.preventDefault();
+        socket.emit('get_message',{group: null});
+      }
     
 
-    createMessage = item => {
+    createMessage = (item, index) => {
     	return (
-			<li key={item.id} >
-				<span className={item.update ? 'updateStyle todo-item' : 'noneUpdateStyle todo-item'}>
-					{item.text}
+			<li key={index} >
+				<span className= 'noneUpdateStyle todo-item'>
+					{item.message}
 				</span>
 			</li>
 		)
@@ -37,6 +40,20 @@ class Message extends Component {
         return (
             <Fragment>
                 <div className="container">
+                    <div className="row">
+                    <div className="contact-form form-add-task" >
+                <form  onSubmit={this.getMessage} >
+                    <div className="row form-group">
+                        <div className="col-md-3"></div>
+                        <div className="col-md-5">
+                        <input type="text"  id="name" className="form-control" placeholder="Task" ref="taskInput"/>
+                        </div>
+                        <div className="col-md-1"><button className="btn btn-danger" type="submit">get Message</button></div>
+                        <div className="col-md--3"></div> 
+                    </div>
+                </form>
+            </div>
+                    </div>
                     <div className="about row">
                         <div className="col-lg-5">
                             <div className="span5 about-carousel">
