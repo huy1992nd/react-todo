@@ -9,7 +9,7 @@ class Message extends Component {
             list_message: [],
             group: null
         }
-        socket.emit('list_message',{});
+        // socket.emit('list_message',{});
         
         // this.addItems = this.addItems.bind(this);
     }
