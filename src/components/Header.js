@@ -31,6 +31,7 @@ class Header extends Component {
 							<ul className="nav navbar-nav">
 								<li className={`${location.pathname === '/'? 'active' : ''}`}><Link to={'/'}>Home</Link></li>
 								<li className={`${location.pathname === '/todo'? 'active' : ''}`}><Link to={'/todo'}>Todo</Link></li>
+								<li className={`${location.pathname === '/online-message'? 'active' : ''}`}><Link to={'/online-message'}>Online message</Link></li>
 								<li><input value={this.props.search_str}  onChange= {this.handleChange} type="text" placeholder=" Search" className="form-control search"/></li>
 							</ul>
 						</div>
