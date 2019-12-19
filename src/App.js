@@ -7,6 +7,7 @@ import Message from './components/onlineMessage/message';
 import Home from './components/Home';
 import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import '@progress/kendo-theme-default/dist/all.css';
 
 class App extends Component {
 

@@ -35,7 +35,7 @@ class todoList extends Component {
               <div className="row form-group">
                 <div className="col-md-2"></div>
                 <div className="col-md-1">
-                <span className="btn btn-danger" onClick={()=>{this.handerUpdate()}} >Submit</span>
+                <span className="btn btn-danger" onClick={()=>{this.handerUpdate()}} >Update</span>
                 </div>
                 <div className="col-md-5">
                   <input type="text"  id="name" className="form-control" placeholder="Task" ref="taskInput"/>

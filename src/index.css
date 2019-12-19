@@ -29,6 +29,18 @@ body {
    background-color: #E2E0E1;
 }
 
+.group1Style{
+  background-color: rgb(226, 224, 224);
+}
+.group2Style{
+  background-color: #ff6358;
+  color: aliceblue!important;
+}
+.group3Style{
+  background-color: rgb(37, 6, 22);
+  color: aliceblue!important;
+}
+
 ul#filters li .todo-item {
   padding: 10px 15px;
   display: inline-block;
