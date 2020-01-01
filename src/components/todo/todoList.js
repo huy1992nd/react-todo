@@ -40,7 +40,9 @@ class todoList extends Component {
                 <div className="col-md-5">
                   <input type="text"  id="name" className="form-control" placeholder="Task" ref="taskInput"/>
                 </div>
-                <div className="col-md-1"><button className="btn btn-danger" type="submit">Submit</button></div>
+                <div className="col-md-1">
+                  <button className="btn btn-danger" type="submit">Submit</button>
+                </div>
                 <div className="col-md--3"></div> 
               </div>
           </form>

@@ -9,7 +9,9 @@ class todoItems extends Component {
   }
 
   createTasks = item => {
-    return (<li key={item.id} onClick={() => this.handerRemove(item.id)}> <span className={item.update ? 'updateStyle todo-item' : 'noneUpdateStyle todo-item'}>{item.text}</span></li>)
+    return (<li key={item.id} onClick={() => this.handerRemove(item.id)}>
+       <span className={item.update ? 'updateStyle todo-item' : 'noneUpdateStyle todo-item'}>{item.text}</span>
+       </li>)
   }
 
   handerRemove = (key) => {
